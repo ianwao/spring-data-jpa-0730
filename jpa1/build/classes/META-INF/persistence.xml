@@ -1,0 +1,47 @@
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="jpa1"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- 添加持久化类 -->
+		<!-- 多对一 -->
+		<class>cn.com.taiji.domain.Article</class>
+		<class>cn.com.taiji.domain.Customer</class>
+		
+		<class>cn.com.taiji.domain.Department</class>
+		<class>cn.com.taiji.domain.Employee</class>
+		
+		<!-- 一对一 -->
+		<class>cn.com.taiji.domain.Address</class>
+		<class>cn.com.taiji.domain.People</class>
+		
+		<!-- 一对多 -->
+		<class>cn.com.taiji.domain.Father</class>
+		<class>cn.com.taiji.domain.Son</class>
+		
+		<!-- 多对多 -->
+		<class>cn.com.taiji.domain.User</class>
+		<class>cn.com.taiji.domain.Authority</class>
+		
+		
+		<properties>
+			<!-- 连接数据库的基本信息 -->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/taiji0726?serverTimezone=GMT" /><!-- 高版本的mysql需要解决时区问题,低版本也可以写，所以一直写就对了 -->
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="root" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="eclipselink.ddl-generation"
+				value="create-tables" />
+
+			<!-- 配置JPA实现产品的属性，即hibernate的属性 -->
+			<property name="hibernate.format_sql" value="true" /><!-- 是否格式化sql语句 -->
+			<property name="hibernate.show_sql" value="true" /> <!-- 是否在控制台打印sql语句 -->
+			<property name="hibernate.hbm2ddl.auto" value="update" /><!-- 生成数据表的策略 -->
+		</properties>
+	</persistence-unit>
+</persistence>
