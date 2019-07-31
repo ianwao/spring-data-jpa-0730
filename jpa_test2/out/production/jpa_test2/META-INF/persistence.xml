@@ -1,0 +1,36 @@
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="jpa_test1"
+		transaction-type="RESOURCE_LOCAL">
+		<class>cn.com.taiji.pojo.Article</class>
+		<class>cn.com.taiji.pojo.Author</class>
+
+		<class>cn.com.taiji.pojo.People</class>
+		<class>cn.com.taiji.pojo.Address</class>
+
+		<class>cn.com.taiji.pojo.User</class>
+		<class>cn.com.taiji.pojo.Authority</class>
+
+		<properties>
+			<!--若数据库驱动太高则要在url后面加上 ?serverTimezone=GMT -->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/student" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="tjqiuyuwei6" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="eclipselink.ddl-generation"
+				value="create-tables" />
+
+			<!-- 配置JPA实现产品的属性，即hibernate的属性 -->
+			<property name="hibernate.format_sql" value="true" /><!-- 是否格式化sql语句 -->
+			<property name="hibernate.show_sql" value="true" /> <!-- 是否在控制台打印sql语句 -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
