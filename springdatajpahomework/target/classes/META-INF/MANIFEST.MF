@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: springdatajpahomework
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: FBH
+Implementation-Vendor-Id: com.example
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/springdataj
+ pahomework/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
